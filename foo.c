@@ -6,7 +6,7 @@ static PyModuleDef moduledef = {
     .m_size = -1
 };
 
-PyMODINIT_FUNC PyInit__module2(void)
+PyMODINIT_FUNC PyInit_foo(void)
 {
     PyObject *module = PyModule_Create(&moduledef);
     return module;

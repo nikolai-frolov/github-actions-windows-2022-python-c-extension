@@ -1,4 +1,2 @@
-from setuptools import setup, Extension
-
-ext = Extension('foo', ['foo.c'], extra_compile_args=['-std=c99'])
-setup(name='example', ext_modules=[ext])
+from setuptools import setup
+setup(name='example', py_modules=['test_ext'])

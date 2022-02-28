@@ -25,7 +25,7 @@ def test_foo(testdir):
         }
 
         static PyMethodDef methods[] = {
-            {"bar", bar, METH_VARARGS, "no docstring"},
+            {.ml_name = "bar", .ml_meth = bar, .ml_flags = METH_VARARGS, .ml_doc = "no docstring"},
             {/* terminal element, all NULL */}
         };
 

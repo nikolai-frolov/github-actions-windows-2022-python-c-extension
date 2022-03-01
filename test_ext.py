@@ -7,7 +7,7 @@ pytest_plugins = ['pytester']
 def test_foo(testdir):
     testdir.makepyfile(setup="""
         from setuptools import setup, Extension
-        ext = Extension('foo', extra_compile_args=['/std:c11'], sources=['foo.c'])
+        ext = Extension('foo', sources=['foo.c'])
         setup(name='foo', py_modules=['test_foo'], ext_modules=[ext])
         """,
         test_foo="""
@@ -26,7 +26,7 @@ def test_foo(testdir):
 
         static PyMethodDef methods[] = {
             {"bar", bar, METH_VARARGS, "no docstring"},
-            {/* terminal element, all NULL */}
+            {NULL}
         };
 
         static PyModuleDef moduledef = {
